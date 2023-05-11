@@ -14,9 +14,9 @@
         <button type="submit" class="login-button">Entrar</button>
       </form>
       <div class="login-options">
-        <p class="signup-link">Ainda não tem uma conta? <a href="#" class="signup">Cadastre-se</a></p>
-        <p class="signup-link">É entregador? <a href="#" class="signup">Cadastre-se como entregador</a></p>
-      </div>
+<button class="login-button2" @click="redirectToCadastroEstabelecimento">Cadastre-se como estabelecimento</button>
+   <button class="login-button2" @click="redirectToCadastroEntregador">Cadastre-se como entregador</button>
+  </div>
     </div>
   </div>
 </template>
@@ -50,8 +50,8 @@ export default {
 }
 
 .login-card {
-  width: 500px;
-  padding: 50px;
+  width: 300px;
+  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -98,10 +98,20 @@ export default {
 
 .login-button {
   padding: 10px;
+   margin: 2px;
   background-color: #3f51b5;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.login-button2 {
+  padding: 10px;
+   margin: 2px;
+  background-color: #f06432;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
   cursor: pointer;
 }
 
