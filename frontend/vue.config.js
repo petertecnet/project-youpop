@@ -1,5 +1,4 @@
-module.exports = {
-  transpileDependencies: [
-    '@vue/cli-plugin-babel',
-  ],
-};
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true
+})
