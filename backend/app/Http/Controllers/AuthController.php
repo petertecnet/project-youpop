@@ -94,4 +94,9 @@ class AuthController extends Controller
     {
         return response()->json(['user' => $request->user()]);
     }
+    public function checkAuthentication(Request $request)
+    {
+        return response()->json(['authenticated' => $request->user() ? true : false]);
+    }
+
 }

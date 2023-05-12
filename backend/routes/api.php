@@ -19,7 +19,9 @@ Route::post('/login', [AuthController::class, 'login']);
 // Rotas protegidas que exigem autenticação
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/user', [AuthController::class, 'user']);
+    Route::get('/user', [AuthController::class, 'user']); 
+    Route::get('/check-authentication', [AuthController::class, 'checkAuthentication']);
+
 });
 
 // Rota para gerar link de redefinição de senha

@@ -55,6 +55,9 @@ export default {
           title: 'Sucesso!',
           text: response.data.message,
         });
+
+        // Redirecionar para a página "/dashboard" após o login bem-sucedido
+        this.$router.push('/dashboard');
       } catch (error) {
         // Lidar com erros de autenticação
         if (error.response && error.response.data && error.response.data.message) {
@@ -81,6 +84,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 /* Estilos do componente */
 .login-container {
