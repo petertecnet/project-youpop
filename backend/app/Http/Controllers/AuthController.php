@@ -39,7 +39,7 @@ class AuthController extends Controller
         // Generate access token for the user
         $token = $user->createToken('authToken')->plainTextToken;
 
-        return response()->json(['token' => $token, "messagem" => "Usuário cadastrado com sucesso"], 201);
+        return response()->json(['token' => $token, "messagem" => 'Usuário cadastrado com sucesso'], 201);
     }
 
     /**
@@ -57,7 +57,7 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 400);
+            return response()->json(['error' => $validator->errors(), 'message'=> 'Erro ao efetuar login'], 400);
         }
 
         // Attempt to authenticate the user
@@ -66,9 +66,9 @@ class AuthController extends Controller
             $user = Auth::user();
             $token = $user->createToken('authToken')->plainTextToken;
 
-            return response()->json(['token' => $token, "menssagem"=>"Login efetuado com sucesso"], 200);
+            return response()->json(['token' => $token, 'message' => 'Seja bem vindo. Você sera redirecionado em instantes'], 200);
         } else {
-            return response()->json(['error' => 'Invalid credentials'], 401);
+            return response()->json(['error' => 'Invalid credentials', 'message'=> 'Erro ao efetuar login'], 401);
         }
     }
 
